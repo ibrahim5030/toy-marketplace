@@ -55,9 +55,7 @@ const Navbar = () => {
                     <div className="navbar-end">
                         {user ?
                             <><div>
-                                <img data-tooltip-id="my-tooltip"
-                                    data-tooltip-content={user.displayName}
-                                    data-tooltip-place="bottom" className='w-16 pr-3' src={user.photoURL} alt="" />
+                                <img data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}data-tooltip-place="left" className='w-16 pr-3' src={user.photoURL} alt="" />
                                 <Tooltip id="my-tooltip"></Tooltip>
                             </div>
 
