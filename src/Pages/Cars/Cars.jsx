@@ -24,7 +24,7 @@ const Cars = ({ caar }) => {
                     <p>Price: ${price}</p>
                     <p>Rating: {rating} Stars</p>
                     <div className="card-actions">
-                        <Link onClick={alert} to={`/details/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+                        <Link onClick={alert} to={`/details/${_id}`}><button className="btn btn-active btn-secondary">View Details</button></Link>
                     </div>
                 </div>
             </div>

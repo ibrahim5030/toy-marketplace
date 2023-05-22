@@ -1,7 +1,9 @@
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 
 const Details = () => {
+    useTitle('Details');
     const carDetails = useLoaderData();
     const {seller_name, toy_name, price, available_quantity, picture_url, description, seller_email, rating} = carDetails;
     return (
@@ -15,7 +17,7 @@ const Details = () => {
                     <p className="py-1 text-2xl">Price: ${price}</p>
                     <p className="py-1 text-2xl">Available Quantity: {available_quantity}</p>
                     <p className="py-3 text-xl">Detail Description: {description}</p>
-                    <button className="btn btn-primary">Rating: {rating} Stars</button>
+                    <button className="btn btn-active btn-secondary">Rating: {rating} Stars</button>
                 </div>
             </div>
         </div>

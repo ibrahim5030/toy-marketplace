@@ -10,6 +10,7 @@ import { useLoaderData } from 'react-router-dom';
 import Cars from '../Cars/Cars';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import mobile from '../../assets/mobileapp.png';
 
 const Home = () => {
     useTitle('Home');
@@ -46,8 +47,8 @@ const Home = () => {
                 </div>
             </div>
             {/* For Gallery Section */}
-            <h3 className="text-5xl text-sky-800 font-bold text-center mb-10">See The Gallery</h3>
-            <div className="w-10/12 mx-auto grid grid-cols-3 gap-6 mb-16">
+            <h3 className="text-5xl text-sky-800 font-bold text-center py-10">See The Gallery</h3>
+            <div className="w-10/12 mx-auto grid grid-cols-3 gap-6 mb-28">
                 <div className='outline outline-offset-4 outline-4 outline-sky-500 rounded'>
                     <img src={windowCar} alt="" />
                 </div>
@@ -70,9 +71,9 @@ const Home = () => {
 
             {/* For React Tabs Shop By Category Section */}
 
-            <h3 className="text-5xl text-sky-800 font-bold text-center mb-10">Shop By Category</h3>
-            <div className="w-10/12 mx-auto bg-sky-300 mb-28 rounded-lg">
-                <div className="w-8/12 mx-auto py-5">
+            <h3 className="text-5xl text-sky-800 font-bold text-center my-10">Shop By Category</h3>
+            <div className="w-10/12 mx-auto bg-sky-300 rounded-lg">
+                <div className="w-8/12 mx-auto">
                     <Tabs>
                         <TabList>
                             <Tab>Racing Car</Tab>
@@ -94,7 +95,7 @@ const Home = () => {
             </div>
 
             {/* Custom Designed Toy Car Section */}
-            <h3 className='text-5xl text-sky-800 font-bold text-center mb-10'>Order Custom Designed Toy Car</h3>
+            <h3 className='text-5xl text-sky-800 font-bold text-center mt-28 mb-10'>Order Custom Designed Toy Car</h3>
             <div className='w-10/12 mx-auto my-5'>
                 <div className='md:flex items-center outline outline-offset-4 outline-4 outline-sky-500 rounded'>
                     <div>
@@ -102,6 +103,20 @@ const Home = () => {
                     </div>
                     <div>
                         <img src="https://images.pexels.com/photos/62276/pexels-photo-62276.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                    </div>
+                </div>
+            </div>
+
+            {/* Mobile App Section */}
+            <h3 className='text-5xl text-sky-800 font-bold text-center mt-28'>Download Our Mobile App</h3>
+            <div className='md:w-10/12 mx-auto my-10 bg-sky-300 rounded-lg'>
+                <div className='md:flex justify-center items-center'>
+                    <div>
+                        <img src={mobile} alt="" />
+                    </div>
+                    <div className='text-center'>
+                        <h3 className='text-xl text-sky-800 font-bold'>To Download Our Mobile App <br /> Click The Download Button.</h3>
+                        <button className='btn btn-active btn-secondary my-5'>Download</button>
                     </div>
                 </div>
             </div>
