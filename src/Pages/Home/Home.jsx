@@ -38,10 +38,10 @@ const Home = () => {
                     </div>
                     <div className="md:w-1/2 pb-3">
                         <h3 className="text-5xl text-white font-bold leading-normal">We Have a Huge
-                        <br /> 
-                        Collection of Toy Cars
-                        <br /> 
-                        For Car Lover Kids</h3>
+                            <br />
+                            Collection of Toy Cars
+                            <br />
+                            For Car Lover Kids</h3>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@ const Home = () => {
                     <img src={blueCar} alt="" />
                 </div>
             </div>
-            
+
             {/* For React Tabs Shop By Category Section */}
 
             <h3 className="text-5xl text-sky-800 font-bold text-center mb-10">Shop By Category</h3>
@@ -90,6 +90,19 @@ const Home = () => {
                             <h2>{thirdTabCars}</h2>
                         </TabPanel>
                     </Tabs>
+                </div>
+            </div>
+
+            {/* Custom Designed Toy Car Section */}
+            <h3 className='text-5xl text-sky-800 font-bold text-center mb-10'>Order Custom Designed Toy Car</h3>
+            <div className='w-10/12 mx-auto my-5'>
+                <div className='md:flex items-center outline outline-offset-4 outline-4 outline-sky-500 rounded'>
+                    <div>
+                        <h3 className='text-2xl text-sky-800 font-bold p-8'>Now You Can Order Custom Designed Toy Cars. Just Send Us Your Design and We Will Make The Car For You.</h3>
+                    </div>
+                    <div>
+                        <img src="https://images.pexels.com/photos/62276/pexels-photo-62276.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                    </div>
                 </div>
             </div>
         </div>
