@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <div>
             {/* For Banner Section */}
-            <div className="bg-sky-800 mb-16">
+            <div className="bg-sky-800 mb-16" data-aos="zoom-in" data-aos-duration="3000">
                 <div className="w-11/12 mx-auto md:flex md:justify-center md:items-center md:gap-16">
                     <div className="md:w-1/2">
                         <img className="my-16" src={car} alt="" />
