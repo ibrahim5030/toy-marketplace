@@ -6,9 +6,28 @@ import pinkCar from '../../assets/pinkcar.jpg';
 import purpleCar from '../../assets/purplecar.png';
 import yellowCar from '../../assets/yellowcar.jpg';
 import blueCar from '../../assets/bluecar.png';
+import { useLoaderData } from 'react-router-dom';
+import Cars from '../Cars/Cars';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const Home = () => {
     useTitle('Home');
+
+    const cars = useLoaderData();
+
+    const racing = cars.filter(c => c.sub_category === "Racing Car");
+
+    const monster = cars.filter(c => c.sub_category === "Monster Car");
+
+    const street = cars.filter(c => c.sub_category === "Street Car");
+
+    const firstTabCars = racing.map(caar => <Cars key={caar._id} caar={caar}></Cars>);
+
+    const secondTabCars = monster.map(caar => <Cars key={caar._id} caar={caar}></Cars>);
+
+    const thirdTabCars = street.map(caar => <Cars key={caar._id} caar={caar}></Cars>);
+
     return (
         <div>
             {/* For Banner Section */}
@@ -46,6 +65,31 @@ const Home = () => {
                 </div>
                 <div className='outline outline-offset-4 outline-4 outline-sky-500 rounded'>
                     <img src={blueCar} alt="" />
+                </div>
+            </div>
+            
+            {/* For React Tabs Shop By Category Section */}
+
+            <h3 className="text-5xl text-sky-800 font-bold text-center mb-10">Shop By Category</h3>
+            <div className="w-10/12 mx-auto bg-sky-300 mb-28 rounded-lg">
+                <div className="w-8/12 mx-auto py-5">
+                    <Tabs>
+                        <TabList>
+                            <Tab>Racing Car</Tab>
+                            <Tab>Monster Car</Tab>
+                            <Tab>Street Car</Tab>
+                        </TabList>
+
+                        <TabPanel>
+                            <h2>{firstTabCars}</h2>
+                        </TabPanel>
+                        <TabPanel>
+                            <h2>{secondTabCars}</h2>
+                        </TabPanel>
+                        <TabPanel>
+                            <h2>{thirdTabCars}</h2>
+                        </TabPanel>
+                    </Tabs>
                 </div>
             </div>
         </div>
