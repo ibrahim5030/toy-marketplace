@@ -1,8 +1,20 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/Color logo.png';
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
+import 'react-tooltip/dist/react-tooltip.css';
+import { Tooltip } from 'react-tooltip';
 
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error));
+    }
 
     const tabs = <>
         <li className='md:text-white font-bold'><Link to='/'>Home</Link></li>
@@ -26,8 +38,14 @@ const Navbar = () => {
                                 {tabs}
                             </ul>
                         </div>
-                        <img className='w-24 md:pr-3' src={logo} alt="" />
-                        <h3 className="text-3xl text-white font-bold">Car Shop</h3>
+                        <div className='flex justify-center items-center'>
+                            <div>
+                                <img className='w-24 md:pr-3' src={logo} alt="" />
+                            </div>
+                            <div>
+                                <h3 className="text-3xl text-white font-bold">Car Shop</h3>
+                            </div>
+                        </div>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
@@ -35,12 +53,16 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <div>
-                            <img src="" alt="" />
-                        </div>
+                        {user ?
+                            <><div>
+                                <img data-tooltip-id="my-tooltip"
+                                    data-tooltip-content={user.displayName}
+                                    data-tooltip-place="bottom" className='w-16 pr-3' src={user.photoURL} alt="" />
+                                <Tooltip id="my-tooltip"></Tooltip>
+                            </div>
 
-                        <Link><button className="btn btn-active btn-secondary">Logout</button></Link>
-                        <Link to='/login'><button className="btn btn-active btn-secondary">Login</button></Link>
+                                <Link onClick={handleLogOut}><button className="btn btn-active btn-secondary">Logout</button></Link></> :
+                            <Link to='/login'><button className="btn btn-active btn-secondary">Login</button></Link>}
                     </div>
                 </div>
             </div>
