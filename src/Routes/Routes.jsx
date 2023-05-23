@@ -10,6 +10,7 @@ import NotFound from "../Pages/NotFound/NotFound";
 import AllToys from "../Pages/AllToys/AllToys";
 import AddAToy from "../Pages/AddAToy/AddAToy";
 import MyToys from "../Pages/MyToys/MyToys";
+import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 
 
 
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: ()=> fetch('http://localhost:5000/cars')
+                loader: () => fetch('http://localhost:5000/cars')
             },
             {
                 path: "/login",
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/cars/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
             },
             {
                 path: "/blog",
@@ -51,8 +52,13 @@ const router = createBrowserRouter([
             {
                 path: '/mytoys',
                 element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
-                loader: ()=> fetch('http://localhost:5000/cars')                
+                loader: () => fetch('http://localhost:5000/cars')
 
+            },
+            {
+                path: '/updatetoys/:id',
+                element: <UpdateToys></UpdateToys>,
+                loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
             }
         ],
     },

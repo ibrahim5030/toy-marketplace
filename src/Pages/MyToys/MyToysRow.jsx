@@ -52,7 +52,7 @@ const MyToysRow = ({ toy, myAddedToys, setMyAddedToys }) => {
             <td>{rating} Stars</td>
             <td className="text-center">{available_quantity}</td>
             <td className="text-center"><div className="w-28 overflow-hidden">{description}</div></td>
-            <td><Link to=""><button className="btn btn-active btn-secondary">Update</button></Link></td>
+            <td><Link to={`/updatetoys/${_id}`}><button className="btn btn-active btn-secondary">Update</button></Link></td>
             <td><button onClick={() => handleDelete(_id)} className="btn btn-active btn-secondary">Delete</button></td>
         </tr>
     );
