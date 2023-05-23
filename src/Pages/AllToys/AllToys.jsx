@@ -13,7 +13,7 @@ const AllToys = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(`http://localhost:5000/cars?limit=${toysDefaultNumber}`);
+            const response = await fetch(`https://b7a11-toy-marketplace-server-side-puce.vercel.app/cars?limit=${toysDefaultNumber}`);
 
             const data = await response.json();
             setToys(data);

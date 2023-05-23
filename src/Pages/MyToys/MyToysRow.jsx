@@ -21,7 +21,7 @@ const MyToysRow = ({ toy, myAddedToys, setMyAddedToys }) => {
 
 
 
-                fetch(`http://localhost:5000/cars/${_id}`, {
+                fetch(`https://b7a11-toy-marketplace-server-side-puce.vercel.app/cars/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
