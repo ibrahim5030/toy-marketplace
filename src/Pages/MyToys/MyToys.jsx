@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyToysRow from "./MyToysRow";
 
@@ -16,10 +16,40 @@ const MyToys = () => {
     const myCarToys = allCarsToys.filter(t => t.seller_email === user.email)
 
     const [myAddedToys, setMyAddedToys] = useState(myCarToys);
+    const [ascending, setAscending] = useState([]);
+    const [descending, setDescending] = useState([]);
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/cartoy')
+        .then(res => res.json())
+        .then(data => setAscending(data))
+    },[])
+    
+    useEffect(()=>{
+        fetch('http://localhost:5000/cartoys')
+        .then(res => res.json())
+        .then(data => setDescending(data))
+    },[])
+    
+    const handleAscending = () =>{
+        const result = ascending.filter(t => t.seller_email === user.email)
+        setMyAddedToys(result);
+    }
+    
+    const handleDescending = () =>{
+        const result = descending.filter(t => t.seller_email === user.email)
+        setMyAddedToys(result);
+    }
 
     return (
         <div className="my-10">
             <p className="text-5xl text-sky-800 text-center mb-10">See My Toys</p>
+
+            {/* For Ascending Discending Order Buttons */}
+            <div className="flex gap-5 justify-center mb-5">
+                <button className="btn btn-active btn-secondary" onClick={handleAscending}>Ascending By Price</button>
+                <button className="btn btn-active btn-secondary" onClick={handleDescending}>Descending By Price</button>
+            </div>
 
             {/* For Added Toys Section */}
             <div className="w-11/12 mx-auto">
