@@ -32,7 +32,7 @@ const Home = () => {
     return (
         <div>
             {/* For Banner Section */}
-            <div className="bg-sky-800 mb-16" data-aos="zoom-in" data-aos-duration="3000">
+            <div className="bg-sky-800 mb-16" data-aos="slide-right" data-aos-duration="3000">
                 <div className="w-11/12 mx-auto md:flex md:justify-center md:items-center md:gap-16">
                     <div className="md:w-1/2">
                         <img className="py-16" src={car} alt="" />
@@ -48,7 +48,7 @@ const Home = () => {
             </div>
             {/* For Gallery Section */}
             <h3 className="text-5xl text-sky-800 font-bold text-center py-10">See The Gallery</h3>
-            <div className="w-10/12 mx-auto grid grid-cols-3 gap-6 mb-28">
+            <div className="w-10/12 mx-auto grid grid-cols-3 gap-6 mb-28" data-aos="flip-left" data-aos-duration="3000">
                 <div className='outline outline-offset-4 outline-4 outline-sky-500 rounded'>
                     <img src={windowCar} alt="" />
                 </div>
@@ -72,7 +72,7 @@ const Home = () => {
             {/* For React Tabs Shop By Category Section */}
 
             <h3 className="text-5xl text-sky-800 font-bold text-center my-10">Shop By Category</h3>
-            <div className="w-10/12 mx-auto bg-sky-300 rounded-lg">
+            <div className="w-10/12 mx-auto bg-sky-300 rounded-lg py-10">
                 <div className="w-8/12 mx-auto">
                     <Tabs>
                         <TabList>

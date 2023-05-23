@@ -6,6 +6,7 @@ import Register from "../Pages/Register/Register";
 import Details from "../Pages/Details/Details";
 import PrivateRoute from "./PrivateRoute";
 import Blogs from "../Pages/Blogs/Blogs";
+import NotFound from "../Pages/NotFound/NotFound";
 
 
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             }
         ],
     },
+    {
+        path: "*",
+        element: <NotFound></NotFound>
+    }
 ]);
 
 
