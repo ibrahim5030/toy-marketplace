@@ -14,7 +14,7 @@ const NotFound = () => {
                         <p
                             className="text-2xl md:text-3xl font-light leading-normal text-white"
                         >Sorry we could not find this page. </p>
-                        <p className="mb-8 text-white">But dont worry, you can find plenty of other things on our homepage.</p>
+                        <p className="mb-8 text-white">But do not worry, you can find plenty of other things on our homepage.</p>
 
                         <Link to='/'>
                             <button className="btn btn-active">Back to home</button>
